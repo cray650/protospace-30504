@@ -1,5 +1,5 @@
 class PrototypesController < ApplicationController
-before_action :authenticate_user!, expect: [:index, :show]
+  before_action :authenticate_user!, only: [:new, :create, :edit]
 before_action :move_to_index, only: :edit
   def index
     @prototypes = Prototype.all
